@@ -1,0 +1,6 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]C:/Users/admin/Documents/Vivado_projects/BMC_FPGA_rev3/BMC_FPGA_rev3/FPGA3/export/FPGA3/sw/FPGA3/boot/fsbl.elf
+	C:/Users/admin/Documents/Vivado_projects/BMC_FPGA_rev3/BMC_FPGA_rev3/Hello_world/_ide/bitstream/BCM_top_vitis.bit
+}

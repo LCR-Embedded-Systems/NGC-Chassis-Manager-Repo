@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="Hello_world" location="C:/Users/admin/Documents/Vivado_projects/BMC_FPGA_rev3/BMC_FPGA_rev3/Hello_world" platform="C:/Users/admin/Documents/Vivado_projects/BMC_FPGA_rev3/BMC_FPGA_rev3/FPGA3/export/FPGA3/FPGA3.xpfm" platformUID="xilinx:::0.0(custom)" systemProject="Hello_world_system" sysConfig="FPGA3" runtime="C/C++" cpu="standalone_domain" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="11b101df4d755d073926e21d88c6a2e3">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.1197173101">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.420887071" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

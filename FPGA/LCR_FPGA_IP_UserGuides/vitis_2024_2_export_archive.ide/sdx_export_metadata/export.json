@@ -1,0 +1,29 @@
+{
+  "version": "2024.2",
+  "applications": [],
+  "platforms": [
+    {
+      "name": "lcr_vitis_proj"
+    }
+  ],
+  "systems": [
+    {
+      "name": "HelloWorld_system",
+      "platform": "C:/Users/ES/Documents/BMC_FPGA_rev4_2024_2/lcr_vitis_proj/export/lcr_vitis_proj/lcr_vitis_proj.xpfm",
+      "sysConfig": "lcr_vitis_proj",
+      "buildConfig": "Debug",
+      "applications": [
+        {
+          "name": "HelloWorld",
+          "platform": "C:/Users/ES/Documents/BMC_FPGA_rev4_2024_2/lcr_vitis_proj/export/lcr_vitis_proj/lcr_vitis_proj.xpfm",
+          "platformPath": "C:\\Users\\ES\\Documents\\BMC_FPGA_rev4_2024_2\\lcr_vitis_proj\\export\\lcr_vitis_proj",
+          "sysConfig": "lcr_vitis_proj",
+          "domain": "standalone_domain",
+          "system": "HelloWorld_system"
+        }
+      ],
+      "platformPath": "C:\\Users\\ES\\Documents\\BMC_FPGA_rev4_2024_2\\lcr_vitis_proj\\export\\lcr_vitis_proj"
+    }
+  ],
+  "others": []
+}

@@ -1,0 +1,16 @@
+2025-02-01T14:51:20.900335500255-14:51:20 **** Build of configuration Debug for project Hello_world_system ****
+000-make all 
+000-Generating bif file for the system project
+000-generate_system_bif.bat 51780 C:/Users/admin/Documents/Vivado_projects/BMC_FPGA_rev3/BMC_FPGA_rev3/FPGA3/export/FPGA3/FPGA3.xpfm standalone_domain C:/Users/admin/Documents/Vivado_projects/BMC_FPGA_rev3/BMC_FPGA_rev3/Hello_world_system/Debug/system.bif
+000-'\gnu\microblaze\lin\bin\' is not recognized as an internal or external command,
+000-operable program or batch file.
+000-'\gnu\microblaze\nt\bin\' is not recognized as an internal or external command,
+000-operable program or batch file.
+000-'\gnuwin\bin\' is not recognized as an internal or external command,
+000-operable program or batch file.
+000-sdcard_gen --xpfm C:/Users/admin/Documents/Vivado_projects/BMC_FPGA_rev3/BMC_FPGA_rev3/FPGA3/export/FPGA3/FPGA3.xpfm --sys_config FPGA3 --bif C:/Users/admin/Documents/Vivado_projects/BMC_FPGA_rev3/BMC_FPGA_rev3/Hello_world_system/Debug/system.bif --bitstream C:/Users/admin/Documents/Vivado_projects/BMC_FPGA_rev3/BMC_FPGA_rev3/Hello_world/_ide/bitstream/BCM_top_vitis.bit --elf C:/Users/admin/Documents/Vivado_projects/BMC_FPGA_rev3/BMC_FPGA_rev3/Hello_world/Debug/Hello_world.elf,ps7_cortexa9_0
+000-creating BOOT.BIN using C:/Users/admin/Documents/Vivado_projects/BMC_FPGA_rev3/BMC_FPGA_rev3/Hello_world/_ide/bitstream/BCM_top_vitis.bit
+000-Running D:/Xilinx/Vitis/2024.1/bin/bootgen  -image C:/Users/admin/Documents/Vivado_projects/BMC_FPGA_rev3/BMC_FPGA_rev3/Hello_world_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+00255-
+14:51:27 Build Finished (took 6s.223ms)
+

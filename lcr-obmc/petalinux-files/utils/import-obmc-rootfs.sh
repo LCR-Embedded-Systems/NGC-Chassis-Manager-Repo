@@ -9,7 +9,7 @@ cp ~/tmp-obmc/deploy/images/zc702-zynq7/obmc-phosphor-image-zc702-zynq7.manifest
 cp ~/tmp-obmc/deploy/images/zc702-zynq7/obmc-phosphor-image-zc702-zynq7.tar.gz rootfs.tar.gz || exit
 
 # Copy tailored boot script
-cp ~/projects/LCR-ChassisManager-Repo/lcr-obmc/petalinux-files/configs/boot.scr .
+cp ~/projects/NGC-Chassis-Manager-Repo/lcr-obmc/petalinux-files/configs/boot.scr .
 
 # These are no longer accurate, so delete
 rm rootfs.qemuboot.conf

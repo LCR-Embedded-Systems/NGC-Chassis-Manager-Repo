@@ -34,13 +34,6 @@ KERNEL_MODULE_AUTOLOAD = ""
 do_install:append() {
     # Fix missing source symlink error in kernel 6.6.40
     for moddir in ${D}/lib/modules/*; do
-        if [ -d "$moddir" -a -L "$moddir/source" ]; then
-            # Source symlink exists, leave it
-            :
-        elif [ -d "$moddir" ]; then
-            # Create a dummy source symlink to prevent rm errors
-            # The kernel will remove it, and we won't get an error
-            ln -sf ${S} "$moddir/source" 2>/dev/null || true
-        fi
+        rm -rf "$moddir/source" "$moddir/build"
     done
 }

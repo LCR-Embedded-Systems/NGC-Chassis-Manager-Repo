@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/projects/LCR-ChassisManager-Repo/lcr-obmc
+cd ~/projects/NGC-Chassis-Manager-Repo/lcr-obmc
 . ./setup zc702-zynq7
 bitbake -c clean lcr-ipmitool
 
@@ -23,12 +23,12 @@ cd ..
 petalinux-create project -n peta-bsp --template zynq --tmpdir ~/tmp-peta
 
 cd peta-bsp
-cp ../LCR-ChassisManager-Repo/lcr-obmc/petalinux-files/configs/BCM_top_wrapper_KX.xsa .
+cp ../NGC-Chassis-Manager-Repo/lcr-obmc/petalinux-files/configs/BCM_top_wrapper_KX.xsa .
 # cp ../LCR-ChassisManager-Repo/lcr-obmc/petalinux-files/configs/BCM_FPGA_R4_3.xsa .
 echo "running petalinux config now"
 petalinux-config --get-hw-description=./BCM_top_wrapper_KX.xsa --silentconfig
 # petalinux-config --get-hw-description=./BCM_FPGA_R4_3.xsa --silentconfig
-cp -a ../LCR-ChassisManager-Repo/lcr-obmc/petalinux-files/configs/project-spec .
+cp -a ../NGC-Chassis-Manager-Repo/lcr-obmc/petalinux-files/configs/project-spec .
 grep -rl @@@HOME@@@ * | xargs sed -i "s|@@@HOME@@@|$HOME|g"
 petalinux-build
 
@@ -39,8 +39,8 @@ fi
 
 cd ./images/linux
 
-cp ../../../LCR-ChassisManager-Repo/lcr-obmc/petalinux-files/utils/import-obmc-rootfs.sh .
-cp ../../../LCR-ChassisManager-Repo/lcr-obmc/petalinux-files/utils/lcr-image.its .
+cp ../../../NGC-Chassis-Manager-Repo/lcr-obmc/petalinux-files/utils/import-obmc-rootfs.sh .
+cp ../../../NGC-Chassis-Manager-Repo/lcr-obmc/petalinux-files/utils/lcr-image.its .
 echo "running import obmc rootfs now"
 ./import-obmc-rootfs.sh
 mkimage -f lcr-image.its image.ub

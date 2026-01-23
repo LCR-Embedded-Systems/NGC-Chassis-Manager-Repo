@@ -41,6 +41,6 @@ CONF_VERSION = "2"
 # We need to prevent a static name getting set in /etc/hostname
 hostname:pn-base-files = ""
 
-TMPDIR = "${HOME}/tmp-obmc"
+TMPDIR = "${HOME}/tmp-obmc-ngc"
 
 BUILD_DATESTAMP = "${SOURCE_DATE_EPOCH}"

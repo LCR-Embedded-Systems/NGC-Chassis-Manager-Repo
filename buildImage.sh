@@ -1,6 +1,11 @@
 #!/bin/bash
 
 cd ~/projects/NGC-Chassis-Manager-Repo/lcr-obmc
+
+source oe-init-build-env .
+
+cd ~/projects/NGC-Chassis-Manager-Repo/lcr-obmc
+
 . ./setup zc702-zynq7
 bitbake -c clean lcr-ipmitool
 

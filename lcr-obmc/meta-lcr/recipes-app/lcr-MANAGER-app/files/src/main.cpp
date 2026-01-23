@@ -1,9 +1,6 @@
 
 #include "../include/MANAGER.hpp"
 
-//build testing change
-
-//testing another change
 
 using namespace std;
 

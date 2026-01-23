@@ -4,6 +4,12 @@
 #
 # Post-install intercept for mime.bbclass
 
+# Skip if update-mime-database doesn't exist or no packages dir (common in minimal images)
+if [ ! -x "$$   D   $${bindir}/update-mime-database" ] || [ ! -d "$$   D   $${mimedir}/packages" ]; then
+    echo "Skipping MIME database update: binary or packages dir missing"
+    exit 0
+fi
+
 echo "Updating MIME database... this may take a while."
 update-mime-database $D${mimedir}
 

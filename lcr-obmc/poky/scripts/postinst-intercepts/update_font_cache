@@ -5,6 +5,12 @@
 
 set -e
 
+# Skip if fc-cache doesn't exist (common in minimal images)
+if [ ! -x "$D${libexecdir}/${binprefix}fc-cache" ]; then
+    echo "Skipping font cache update: binary missing"
+    exit 0
+fi
+
 rm -f $D${fontconfigcachedir}/CACHEDIR.TAG
 
 PSEUDO_UNLOAD=1 ${binprefix}qemuwrapper -L $D -E ${fontconfigcacheenv} $D${libexecdir}/${binprefix}fc-cache --sysroot=$D --system-only ${fontconfigcacheparams}

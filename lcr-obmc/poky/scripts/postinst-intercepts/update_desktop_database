@@ -4,5 +4,10 @@
 #
 # Post-install intercept for mime-xdg.bbclass
 
+if [ ! -x "$$   D   $${bindir}/update-desktop-database" ] || [ ! -d "$$   D   $${desktop_dir}" ]; then
+    echo "Skipping desktop database update: binary or dir missing"
+    exit 0
+fi
+
 update-desktop-database $D${desktop_dir}
 

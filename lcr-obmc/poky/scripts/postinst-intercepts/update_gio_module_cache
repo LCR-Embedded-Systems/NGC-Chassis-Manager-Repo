@@ -3,6 +3,12 @@
 # SPDX-License-Identifier: MIT
 #
 
+# Skip if gio-querymodules doesn't exist (e.g., no GLib/GIO in image)
+if [ ! -x "$$   D   $${libexecdir}/${binprefix}gio-querymodules" ] || [ ! -d "$$   D   $${libdir}/gio/modules" ]; then
+    echo "Skipping gio module cache update: binary or modules dir missing"
+    exit 0
+fi
+
 set -e
 
 PSEUDO_UNLOAD=1 ${binprefix}qemuwrapper -L $D $D${libexecdir}/${binprefix}gio-querymodules $D${libdir}/gio/modules/

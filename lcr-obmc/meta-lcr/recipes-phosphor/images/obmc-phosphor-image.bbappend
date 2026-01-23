@@ -41,6 +41,7 @@ create_image_version_file() {
 # Install a script to display the image version
 ROOTFS_POSTPROCESS_COMMAND:append = " install_image_version_script; "
 
+
 install_image_version_script() {
     echo '#!/bin/sh' > ${IMAGE_ROOTFS}/usr/bin/lcr-version
     echo 'cat /etc/image-version' >> ${IMAGE_ROOTFS}/usr/bin/lcr-version

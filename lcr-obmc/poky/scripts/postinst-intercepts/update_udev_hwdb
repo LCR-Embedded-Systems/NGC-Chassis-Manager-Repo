@@ -3,7 +3,11 @@
 # SPDX-License-Identifier: MIT
 #
 
-set -e
+# Skip if udevadm doesn't exist or no hwdb sources (common in minimal images)
+if [ ! -x "$D${UDEVADM}" ] || [ -z "$(ls -A $D${UDEVLIBDIR}/udev/hwdb.d 2>/dev/null)" ] && [ -z "$(ls -A $D/etc/udev/hwdb.d 2>/dev/null)" ]; then
+    echo "Skipping udev hwdb update: binary or sources missing"
+    exit 0
+fi
 
 case "${PREFERRED_PROVIDER_udev}" in
 	systemd)

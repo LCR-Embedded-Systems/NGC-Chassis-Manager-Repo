@@ -3,6 +3,12 @@
 # SPDX-License-Identifier: MIT
 #
 
+# Skip if man_db.conf or mandb doesn't exist (common in minimal images)
+if [ ! -f "$$   D   $${sysconfdir}/man_db.conf" ] || [ ! -x "$$   D   $${bindir}/mandb" ]; then
+    echo "Skipping mandb update: config or binary missing"
+    exit 0
+fi
+
 set -eu
 
 # Create a temporary man_db.conf with paths to the rootfs, as mandb needs absolute paths

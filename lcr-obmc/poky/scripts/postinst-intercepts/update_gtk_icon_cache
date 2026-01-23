@@ -6,6 +6,26 @@
 
 set -e
 
+# Skip if native gdk-pixbuf-query-loaders doesn't exist
+if [ ! -x "$STAGING_DIR_NATIVE/${libdir_native}/gdk-pixbuf-2.0/gdk-pixbuf-query-loaders" ]; then
+    echo "Skipping native pixbuf loaders update: binary missing"
+else
+    echo "Updating native pixbuf loaders... this may take a while."
+    $STAGING_DIR_NATIVE/${libdir_native}/gdk-pixbuf-2.0/gdk-pixbuf-query-loaders --update-cache
+fi
+
+# Skip if no icons base dir (common in minimal images)
+if [ ! -d "$D/usr/share/icons" ]; then
+    echo "Skipping icon cache update: icons dir missing"
+    exit 0
+fi
+
+# Skip if gtk-update-icon-cache doesn't exist
+if ! command -v gtk-update-icon-cache >/dev/null 2>&1 ; then
+    echo "Skipping icon cache update: binary not found in PATH"
+    exit 0
+fi
+
 # Update native pixbuf loaders
 $STAGING_DIR_NATIVE/${libdir_native}/gdk-pixbuf-2.0/gdk-pixbuf-query-loaders --update-cache
 

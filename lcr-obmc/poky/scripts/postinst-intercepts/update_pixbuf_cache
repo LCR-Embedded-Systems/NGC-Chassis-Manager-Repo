@@ -5,6 +5,12 @@
 
 set -e
 
+# Skip if gdk-pixbuf-query-loaders doesn't exist or no loaders dir (common in minimal images)
+if [ ! -x "${D}${libdir}/gdk-pixbuf-2.0/gdk-pixbuf-query-loaders" ] || [ ! -d "${D}${libdir}/gdk-pixbuf-2.0/2.10.0/loaders" ]; then
+    echo "Skipping GDK Pixbuf loaders cache update: binary or loaders dir missing"
+    exit 0
+fi
+
 export GDK_PIXBUF_MODULEDIR=$D${libdir}/gdk-pixbuf-2.0/2.10.0/loaders
 export GDK_PIXBUF_FATAL_LOADER=1
 
